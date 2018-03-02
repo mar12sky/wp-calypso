@@ -79,7 +79,7 @@ class JetpackOnboardingStatsStep extends React.Component {
 				buttonLabel={ translate( 'Activate stats' ) }
 				e2eType="activate-stats"
 				header={ header }
-				illustration="/calypso/images/illustrations/illustration-stats-jetpack.svg"
+				illustration="/calypso/images/illustrations/jetpack-stats.svg"
 				onClick={ this.handleActivateStats }
 				siteId={ siteId }
 			/>
@@ -103,7 +103,7 @@ class JetpackOnboardingStatsStep extends React.Component {
 				{ activatedStats ? (
 					<ConnectSuccess
 						href={ getForwardUrl() }
-						illustration="/calypso/images/illustrations/illustration-stats-jetpack.svg"
+						illustration="/calypso/images/illustrations/jetpack-stats.svg"
 						onClick={ this.handleStatsNextButton }
 						title={ translate( 'Success! Jetpack is now collecting valuable stats.' ) }
 					/>
