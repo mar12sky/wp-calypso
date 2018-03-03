@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { map, noop } from 'lodash';
 import { localize } from 'i18n-calypso';
 
@@ -60,9 +61,13 @@ class Timezone extends Component {
 	}
 
 	render() {
-		const { selectedZone } = this.props;
+		const { className, selectedZone } = this.props;
 		return (
-			<select onChange={ this.onSelect } value={ selectedZone || '' }>
+			<select
+				className={ classnames( 'timezone__component', className ) }
+				onChange={ this.onSelect }
+				value={ selectedZone || '' }
+			>
 				<QueryTimezones />
 				{ this.renderOptionsByContinent() }
 				<optgroup label="UTC">
@@ -80,6 +85,7 @@ Timezone.defaultProps = {
 };
 
 Timezone.propTypes = {
+	className: PropTypes.string,
 	selectedZone: PropTypes.string,
 	onSelect: PropTypes.func,
 	includeManualOffsets: PropTypes.bool,

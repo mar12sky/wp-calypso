@@ -167,14 +167,14 @@ const PostScheduleExample = localize(
 									{ this.state.timezone || 'not defined' }
 								</div>
 
-								<Timezone selectedZone={ this.state.timezone } onSelect={ this.setTimezone } />
+								<Timezone
+									className="post-schedule__component-timezone"
+									selectedZone={ this.state.timezone }
+									onSelect={ this.setTimezone }
+								/>
 
 								<a
 									className="card__property-action"
-									style={ {
-										top: '-8px',
-										position: 'relative',
-									} }
 									onClick={ this.clearState.bind( this, 'timezone' ) }
 									href="#"
 								>
